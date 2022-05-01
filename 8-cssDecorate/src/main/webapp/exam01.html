@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+div#menubar {
+	background: olive;
+}
+
+div#menubar ul {
+	margin: 0;
+	padding: 0;
+	width: 567px;  /* 모든 <li>태그를 품을 수 있는 폭 */
+}
+
+div#menubar ul li {
+	display: inline-block;
+	list-style-type: none; /* 마커 제거 */
+	padding: 5px 15px;  /* top,bottom: 5px, left,right=15px */
+}
+div#menubar ul li a {
+	color: white;
+	text-decoration: none;
+}
+div#menubar ul li a:hover {
+	color:violet;
+}
+
+/* table */
+table a {
+	color: white;
+	text-decoration: none;
+}
+td:hover {
+	background: violet;
+}
+</style>
+</head>
+<body>
+	<!-- css로 메뉴바 작업 -->
+	<div id="menubar">
+		<ul>
+			<li><a href="#">Home</a></li>
+			<li><a href="#">Espresso</a></li>
+			<li><a href="#">Cappuccino</a></li>
+			<li><a href="#">Cafe Latte</a></li>
+			<li><a href="#">F.A.Q.</a></li>
+		</ul>
+	</div>
+	<br>
+	
+	<!-- table로 메뉴바 작업 -->
+	<table style="background: olive;" width="600">
+		<tr>
+			<td><a href="#">Home</a></td>
+			<td><a href="#">Espresso</a></td>
+			<td><a href="#">Cappuccino</a></td>
+			<td><a href="#">Cafe Latte</a></td>
+			<td><a href="#">F.A.Q.</a></td>
+		</tr>
+	</table>
+</body>
+</html>
+
+
+
+
+
+
+
+

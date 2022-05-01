@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+h3 {
+	text-align : center;
+}
+p {
+	color : red;
+	font-size : 15px;
+}
+#p1 {
+	color : green;
+}

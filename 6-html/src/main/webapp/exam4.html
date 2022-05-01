@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>form 태그</title>
+</head>
+<body>
+	<!-- 입력 태그를 감싸는 부분 -->
+	<!-- 메소드전달 get방식 : 주소창에나옴, post방식 : 주소창표시가 안되어 보안상 좋음 -->
+	<form action="result.jsp" method="post"> <!-- form태그의 역할 데이터를 불러옴 -->
+		<!-- 입력 태그를 감싸는 부분 : 그룹화 -->
+		<fieldset>
+		<!-- 그룹의 제목 -->
+		<legend> 내용 입력하기 </legend>
+		
+		<div>
+			<label>아이디</label>
+			<input type="text" name="user_id" maxlength="20">
+		</div>
+		<div>
+			<label>회원이름</label>
+			<input type="text" name="user_name" maxlength="20">
+		</div>
+		<div>
+			<label>암호</label>
+			<input type="password" name="user_pw" maxlength="20">
+		</div>
+		<div>
+			<label>자기소개</label>
+			<textarea name="memo" maxlength="100"></textarea>
+		</div>
+		<div>
+			<label>숨겨진 항목</label>
+			<input type="hidden" name="data" value="hiddendata">
+		</div>
+		</fieldset>
+		
+		<div>
+			<input type="submit" value="전송">
+			<input type="reset" value="취소">
+		</div>
+	</form>
+
+</body>
+</html>

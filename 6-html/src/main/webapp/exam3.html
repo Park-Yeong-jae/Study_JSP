@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>링크의 기본 사용방법</h1>
+	<ul> <!-- url을 사용하면 서버에 요청하는것 -->
+		 <!-- "exam2.html"은 "http://localhost:8080/6-html/exam2.html"이라는 url이다 -->
+		<li><a href="exam2.html">현재 사이트의 특정 파일로 링크</a></li>
+		<li><a href="http://www.naver.com" target="_blank">다른 사이트로 링크(새창)</a></li>
+		<li><a href="http://www.naver.com" target="_self">다른 사이트로 링크(같은 창)</a></li>
+	</ul>
+	
+	<hr>
+	<ol><!-- 순서가 있는 태그 -->
+		<li><a>현재 사이트의 특정 파일로 링크</a></li>
+		<li><a>다른 사이트로 링크(새창)</a></li>
+		<li><a>다른 사이트로 링크(같은 창)</a></li>
+	</ol>
+	
+	<hr>
+	<div id="blank">빈 공간</div>
+	<hr>
+	<h2>현재 페이지에서의 링크이동</h2>
+	<ul id="menu"> <!-- id를 사용하게되면 브라우저에 요청하는 것 -->
+		<li><a href="#">현재 페이지의 맨 위로 이동</a></li>
+		<li><a href="#menu">현재 페이지의 특정 위치로 이동</a></li>
+	</ul>
+</body>
+</html>
