@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+#myid {
+	background: yellow;
+	font-size: 20px;
+	font-weight: bold;
+	color: blue;
+}
+</style>
+<script type="text/javascript">
+	function doPrint() {
+		// 첫번째 태그만 선택되어짐
+		document.querySelector("#myid").innerHTML = "스크립트가 실행되었습니다.";
+		// 아이디가 같은 태그 여러개 선택하기
+		var h1 = document.querySelectorAll("#myid");
+		for(var i=1; i<3; i++) {
+			h1[i].innerHTML = i + " 스크립트가 실행";
+		}
+	}
+</script>
+</head>
+<body>
+	<h1 id="myid">안녕하세요</h1>
+	<h1 id="myid">자바스크립트입니다.</h1>
+	<h1 id="myid">강의 참 재미있죠?</h1>
+	<a href="#" onclick="doPrint()">자바스크립트 함수 호출하기</a>
+</body>
+</html>

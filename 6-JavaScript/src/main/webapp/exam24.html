@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	// 임의의 정수 1개 생성 => (min=0, max=9) : 0~9 사이의 정수1개 생성
+	function random(min, max) {
+		return parseInt(Math.random() * (max - min + 1) + min);
+	}
+	// 5자리의 인증번호 생성
+	function authNo() {
+		var value = ""
+		for(var i=0; i<5; i++) {
+			value += random(0, 9);
+		}
+		document.querySelector("#auth").innerHTML = value;
+	}
+	function refresh() {
+		// 브라우저에게 서버로부터 현재파일을 새로 달라고 요청을 시킴
+		location.reload();  // 브라우저 새로 고침
+	}
+	function goNaver() {
+		location.href = "http://www.naver.com";
+	}
+</script>
+</head>
+<body onload="authNo()">
+	<p>고객님의 인증번호는 <strong id="auth">00000</strong>입니다.</p>
+	<input type="button" value="인증번호 새로받기" onclick="refresh()"><br>
+	<input type="button" value="네이버로 이동하기" onclick="goNaver()"><br>
+	<a href="http://www.naver.com">네이버</a>
+</body>
+</html>
+
+
+

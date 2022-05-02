@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function image1() {
+		var fruitImg = document.querySelector("#fruitImg");
+		fruitImg.src = "media/banana.png";
+	}
+	function image2() {
+		var fruitImg = document.querySelector("#fruitImg");
+		fruitImg.src = "media/mango.png";
+	}
+	function image3() {
+		var fruitImg = document.querySelector("#fruitImg");
+		fruitImg.src = "media/apple.png";
+	}
+	
+	function image(val) {
+		var fruitImg = document.querySelector("#fruitImg2");
+		fruitImg.src = "media/" + val + ".png";
+	}
+</script>
+</head>
+<body>
+	<h1>라디오 버튼을 클릭하면 이미지를 출력합니다.</h1>
+	<hr>
+	<input type="radio" name="fruit" value="banana" checked
+		onclick="image1()">바나나
+	<input type="radio" name="fruit" value="mango" 
+		onclick="image2()">망고
+	<input type="radio" name="fruit" value="apple" 
+		onclick="image3()">사과
+	<br>
+
+	<img alt="과일" src="media/banana.png" width="100" height="120"
+		id="fruitImg">
+	<hr>
+
+
+	<input type="radio" name="fruit2" value="banana" checked
+		onclick="image(this.value)">바나나
+	<input type="radio" name="fruit2" value="mango" 
+		onclick="image(this.value)">망고
+	<input type="radio" name="fruit2" value="apple" 
+		onclick="image(this.value)">사과
+	<br>
+
+	<img alt="과일" src="media/banana.png" width="100" height="120"
+		id="fruitImg2">
+</body>
+</html>

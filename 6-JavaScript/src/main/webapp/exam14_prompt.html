@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function input_id() {
+		// prompt() : 문자열 1개를 입력받는 대화 상자를 띄우는 함수
+		//var user_id = prompt("아이디를 입력하세요.", "");
+		//document.write(user_id + "<br>");
+		var user_id = document.getElementById("user_id").value;
+		
+		if(user_id != "" && user_id != null) {
+			// alert() : 문자열1개를 출력하는 알림창을 띄우는 함수
+			alert("안녕하세요. " + user_id + "님");
+			// confirm() : ok, cancel을 입력받는 대화상자를 띄우는 함수
+			// => ok 클릭     : true 리턴
+			// => cancel 클릭 : false 리턴
+			var result = confirm("정말 로그아웃 하시겠습니까?");
+			
+			if(result) {
+				alert("로그아웃 되셨습니다.");
+			} else {
+				alert("로그아웃이 취소되었습니다.");
+			}
+		} else {
+			alert("아이디를 입력해주세요.");
+		}	
+	}
+	
+	//input_id();
+</script>
+</head>
+<body>
+	아이디 : <input type="text" id="user_id">
+	<input type="button" value="확인" onclick="input_id()">
+</body>
+</html>
+
+
+

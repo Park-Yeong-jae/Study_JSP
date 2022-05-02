@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이벤트 처리 2</title>
+<script type="text/javascript">
+   function sum(x, y) {
+      return x+y;
+   }
+   function showResult() {
+      var result = sum(10, 50);
+      var spanTag = document.querySelector("span#question");
+      spanTag.innerHTML = "<font color='red'>" + result + "</font>";
+   }
+   function hideReusult() {
+      var str = "?";
+      var spanTag = document.querySelector("span#question");
+      spanTag.innerHTML = str;
+   }
+</script>
+</head>
+<body>
+   <h1 onmouseover="showResult()" onmouseout="hideReusult()">
+   		10 + 50 = <span id="question">?</span></h1>
+   <p>결과를 보시려면 수식 위에 마우스를 올리세요</p>
+</body>
+</html>

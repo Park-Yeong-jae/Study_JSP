@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	// eval 내장 함수
+	// => 수식으로 이루어진 문자열을 수식으로 변환해서 계산을 하는 함수
+	document.write("*** eval 내장함수 ***<br>");
+	var str = "100 + 1";
+	document.write(str + "<br>");
+	
+	var result = eval(str);
+	document.write(result + "<br><hr>");
+	
+	// Number, parseInt 내장함수
+	// => 숫자로 된 문자열을 숫자로 바꾸는 함수
+	// => Number : 정수 또는 실수로 변경
+	// => parseInt : 정수로 변경
+	var str = "100";
+	var num1 = Number(str);
+	var num2 = parseInt(str);
+	
+	var r1 = str + 1;
+	var r2 = num1 + 1;
+	var r3 = num2 + 1;
+	document.write(r1 + "<br>");
+	document.write(r2 + "<br>");
+	document.write(r3 + "<br><hr>");
+	
+	var str = "100.55";
+	var num1 = Number(str);
+	var num2 = parseInt(str);
+	
+	var r1 = str + 1;
+	var r2 = num1 + 1;
+	var r3 = num2 + 1;
+	document.write(r1 + "<br>");
+	document.write(r2 + "<br>");
+	document.write(r3 + "<br><hr>");
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

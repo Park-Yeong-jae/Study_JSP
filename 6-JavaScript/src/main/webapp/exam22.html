@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function printTime() {
+		var days = ['일','월','화','수','목','금','토'];
+		var mydate = new Date(); // 객체가 생성되면서, 현재 시간을 읽어옴
+		
+		var yy = mydate.getFullYear();
+		var mm = mydate.getMonth() + 1;
+		var dd = mydate.getDate();
+		var hh = mydate.getHours();
+		var mi = mydate.getMinutes();
+		var ss = mydate.getSeconds();
+		// 요일수 : 오늘이 일주일 기준 몇번째 날인지 표시
+		var i = mydate.getDay();
+		var day = days[i];
+		
+		var result = yy + "-" + mm + "-" + dd + " "
+				   + day + "요일 " + hh + ":" + mi + ":" + ss;
+		document.querySelector("#timer").innerHTML = result;
+	}
+	function startTimer() {
+		// setInterval(함수명, 시간) : 정해진 시간(ms)마다 함수 호출
+		setInterval(printTime, 1000);
+	}
+</script>
+</head>
+<body onload="startTimer()">
+	<h1 id="timer"></h1>
+</body>
+</html>

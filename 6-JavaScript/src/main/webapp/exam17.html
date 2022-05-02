@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function insertQuestion() {
+		var q = prompt("사칙연산의 수식을 입력하세요. (예: 100+50)", "");
+		var answer = eval(q);
+		var result = q + "=" + answer;
+		// 태그에 출력
+		document.querySelector("#question").innerHTML = result;
+	}	
+</script>
+</head>
+<!-- onload : 브라우저가 모든 태그를 인식한 후, 동작되는 이벤트 속성 -->
+<body onload="insertQuestion();">
+	<h1 id="question"></h1>
+</body>
+</html>
