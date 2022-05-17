@@ -1,0 +1,67 @@
+package board.action;
+
+import java.io.PrintWriter;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import board.bean.BoardBean;
+import board.dao.BoardDAO;
+
+public class BoardReplyProAction implements Action{
+
+	@Override
+	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		request.setCharacterEncoding("utf-8");  // 한글 인코딩 설정
+		//System.out.println("hihi");
+		
+		//1.데이터처리
+		int pg = Integer.parseInt(request.getParameter("pg"));
+		int board_num = Integer.parseInt(request.getParameter("board_num"));
+		int board_re_ref = Integer.parseInt(request.getParameter("board_re_ref"));
+		int board_re_lev = Integer.parseInt(request.getParameter("board_re_lev"));
+		int board_re_seq = Integer.parseInt(request.getParameter("board_re_seq"));
+		String board_name = request.getParameter("board_name");
+		String board_pass = request.getParameter("board_pass");
+		String board_subject = request.getParameter("board_subject");
+		String board_content = request.getParameter("board_content");		
+		
+		BoardBean boardBean = new BoardBean();
+		boardBean.setBoard_num(board_num);
+		boardBean.setBoard_name(board_name);
+		boardBean.setBoard_pass(board_pass);
+		boardBean.setBoard_subject(board_subject);
+		boardBean.setBoard_content(board_content);
+		boardBean.setBoard_re_ref(board_re_ref);
+		boardBean.setBoard_re_lev(board_re_lev);
+		boardBean.setBoard_re_seq(board_re_seq);
+		
+		//db
+		BoardDAO dao = new BoardDAO();
+		int result = dao.insertReplyArticle(boardBean);
+	
+		//2.데이터 공유
+		
+		//3.view처리 파일 리턴
+		String forward = null;
+		if(result > 0) {
+			// forward 방식으로 움직이면, 새로 고침하면 답글이 계속 추가됨, 
+			// 주소창에는 http://localhost:8080/19-board/boardReplyPro.do 
+			// forward = "boardList.do?pg=" + pg;
+			
+			// 주소창의 주소가 바뀌어야함, 그래서 sendRedirect 방식으로 움직여야함
+			// http://localhost:8080/19-board/boardList.do?pg=3 
+			response.sendRedirect("boardList.do?pg=" + pg);
+		}else {
+			response.setContentType("text/html; charset=UTF-8");
+			PrintWriter out = response.getWriter();
+			out.println("<script>");
+			out.println("alert('답글저장실패')");
+			out.println("history.back();");
+			out.println("</script>");
+		}
+		return forward;
+	}
+	
+}
+
